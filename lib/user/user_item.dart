@@ -1,3 +1,4 @@
+import 'package:classmate/user/user_profile.dart';
 import 'package:flutter/material.dart';
 
 class UserItem extends StatelessWidget {
@@ -32,12 +33,20 @@ class UserItem extends StatelessWidget {
           ),
         ],
       ),
-      child: ListTile(
-        leading: CircleAvatar(
-          backgroundImage: AssetImage(avatar),
+      child: GestureDetector(
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => UserProfile(),
+          ),
         ),
-        title: Text(name),
-        subtitle: Text("$course ($branch)"),
+        child: ListTile(
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage(avatar),
+          ),
+          title: Text(name),
+          subtitle: Text("$course ($branch)"),
+        ),
       ),
     );
   }

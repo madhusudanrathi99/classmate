@@ -44,38 +44,38 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAjv25lnomdZqfLDv-mh3eBq3NAzJA5eLs',
-    appId: '1:4880858039:web:b5e16de6e7e139e6ff4632',
-    messagingSenderId: '4880858039',
-    projectId: 'classmate-d2d4d',
-    authDomain: 'classmate-d2d4d.firebaseapp.com',
-    storageBucket: 'classmate-d2d4d.appspot.com',
-    measurementId: 'G-N02Y2ZD747',
+    apiKey: 'AIzaSyCtRii9Gpkxz9mRR5gYbRAz-YBzfsXFSkc',
+    appId: '1:489209908585:web:facc42b451c4250d4e81f8',
+    messagingSenderId: '489209908585',
+    projectId: 'classmates-be24a',
+    authDomain: 'classmates-be24a.firebaseapp.com',
+    storageBucket: 'classmates-be24a.appspot.com',
+    measurementId: 'G-SSBYBL4FTJ',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCuWjUfQ7GaaY-Ah6S4oyDjWDC2TWYdtbk',
-    appId: '1:4880858039:android:a792ad7b7e0df01fff4632',
-    messagingSenderId: '4880858039',
-    projectId: 'classmate-d2d4d',
-    storageBucket: 'classmate-d2d4d.appspot.com',
+    apiKey: 'AIzaSyCsUtWEcPjgxr698ol4--xkfXXUvPgkNTk',
+    appId: '1:489209908585:android:4aa5c5a83f2ca5584e81f8',
+    messagingSenderId: '489209908585',
+    projectId: 'classmates-be24a',
+    storageBucket: 'classmates-be24a.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyADc6SaFWuCKRrctDghoyAfTSaMk-fa7uw',
-    appId: '1:4880858039:ios:504526405fafc51eff4632',
-    messagingSenderId: '4880858039',
-    projectId: 'classmate-d2d4d',
-    storageBucket: 'classmate-d2d4d.appspot.com',
+    apiKey: 'AIzaSyCi4ixrnGcurhSJ-SycFhdPwrnx1nxgu3A',
+    appId: '1:489209908585:ios:3f9647587dd413de4e81f8',
+    messagingSenderId: '489209908585',
+    projectId: 'classmates-be24a',
+    storageBucket: 'classmates-be24a.appspot.com',
     iosBundleId: 'com.example.classmate',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyADc6SaFWuCKRrctDghoyAfTSaMk-fa7uw',
-    appId: '1:4880858039:ios:32ff86fcf7335176ff4632',
-    messagingSenderId: '4880858039',
-    projectId: 'classmate-d2d4d',
-    storageBucket: 'classmate-d2d4d.appspot.com',
+    apiKey: 'AIzaSyCi4ixrnGcurhSJ-SycFhdPwrnx1nxgu3A',
+    appId: '1:489209908585:ios:b07fca086e240e164e81f8',
+    messagingSenderId: '489209908585',
+    projectId: 'classmates-be24a',
+    storageBucket: 'classmates-be24a.appspot.com',
     iosBundleId: 'com.example.classmate.RunnerTests',
   );
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:classmate/home_widgets/user.dart';
 import 'package:classmate/home_widgets/event.dart';
+import 'package:classmate/home_widgets/userprofile.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -66,7 +67,8 @@ class _HomeState extends State<Home> {
                 crossAxisSpacing: 40,
                 mainAxisSpacing: 30,
                 children: const [
-                  User_Widget(),
+                  if (true) User_Widget(),
+                  User_Profile_Widget(),
                   Event_Widget(),
                 ],
               ),

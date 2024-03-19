@@ -104,7 +104,7 @@ class _UserProfileState extends State<UserProfile> {
     );
   }
 
-  Future<void> _addNewClassMate() async {
+  Future<void> _updateClassMate() async {
     final name = _nameController.text;
     final rollNo = _rollNoController.text;
     final course = _selectedCourse;
@@ -152,7 +152,7 @@ class _UserProfileState extends State<UserProfile> {
       return location;
     }
 
-    Future<void> addNewClassMate() {
+    Future<void> updateClassMate() {
       final img_url = uploadPic();
       print(img_url);
       return users.add({
@@ -292,8 +292,8 @@ class _UserProfileState extends State<UserProfile> {
                 children: [
                   Expanded(
                     child: ElevatedButton(
-                      onPressed: addNewClassMate,
-                      child: const Text('Add ClassMate'),
+                      onPressed: updateClassMate,
+                      child: const Text('Update ClassMate'),
                     ),
                   ),
                 ],

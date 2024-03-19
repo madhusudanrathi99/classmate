@@ -11,7 +11,7 @@ class UserList extends StatefulWidget {
 
 class _UserListState extends State<UserList> {
   final Stream<QuerySnapshot> _usersStream =
-      FirebaseFirestore.instance.collection('users').snapshots();
+      FirebaseFirestore.instance.collection('students').snapshots();
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,9 @@ class _UserListState extends State<UserList> {
         return ListView.builder(
           itemCount: snapshot.data!.docs.length,
           itemBuilder: (ctx, index) => UserItem(
-            avatar: snapshot.data!.docs[index]['image'],
+            avatar: snapshot.data!.docs[index]['avatar'].toString().isEmpty
+                ? 'https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png'
+                : snapshot.data!.docs[index]['avatar'],
             name: snapshot.data!.docs[index]['name'],
             rollNo: snapshot.data!.docs[index]['rollNo'],
             course: snapshot.data!.docs[index]['course'],

@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'package:path/path.dart' as p;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
@@ -135,33 +135,32 @@ class _NewUserState extends State<NewUser> {
 
   @override
   Widget build(BuildContext context) {
-    CollectionReference users = FirebaseFirestore.instance.collection('users');
+    String downloadURL = '';
+    CollectionReference users =
+        FirebaseFirestore.instance.collection('students');
 
-    FirebaseStorage storage = FirebaseStorage.instance;
+    Reference storage = FirebaseStorage.instance.ref();
 
-    Future<Uri> uploadPic() async {
-      var location;
-      Reference reference =
-          storage.ref().child("classmates/" + DateTime.now().toString());
-      UploadTask uploadTask = reference.putFile(_image!);
-      uploadTask
-          .whenComplete(() => {location = reference.getDownloadURL()})
-          .catchError((onError) {
-        print(onError);
-      });
-      return location;
+    void uploadPic(String rollNo) async {
+      Reference storageReference =
+          storage.child('classmates').child(p.basename(_image!.path));
+      try {
+        await storageReference.putFile(_image!);
+        downloadURL = await storageReference.getDownloadURL();
+      } catch (error) {
+        print("Error: $error");
+      }
     }
 
     Future<void> addNewClassMate() {
-      final img_url = uploadPic();
-      print(img_url);
+      uploadPic(_rollNoController.text);
       return users.add({
         'name': _nameController.text,
         'rollNo': _rollNoController.text,
         'course': _selectedCourse!.name.toString(),
         'branch': _selectedBranch!.name.toString(),
         'phone': _phoneController.text,
-        'image': img_url,
+        'avatar': downloadURL,
         'password': _rollNoController.text
       }).then((value) {
         print("User Added");

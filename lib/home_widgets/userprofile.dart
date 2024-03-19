@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:classmate/users.dart';
+import 'package:classmate/user/user_profile.dart';
 
 // ignore: camel_case_types
-class Event_Widget extends StatelessWidget {
-  const Event_Widget({super.key});
+class User_Profile_Widget extends StatelessWidget {
+  const User_Profile_Widget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => const Users()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const UserProfile()));
       },
       child: Container(
         decoration: BoxDecoration(
@@ -35,7 +35,7 @@ class Event_Widget extends StatelessWidget {
                 shape: BoxShape.circle,
               ),
               child: const Icon(
-                Icons.calendar_month,
+                Icons.person_2,
                 color: Colors.white,
               ),
             ),
