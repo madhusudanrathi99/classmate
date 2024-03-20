@@ -8,17 +8,30 @@ import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  await FirebaseAppCheck.instance.activate();
+  Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  FirebaseAppCheck.instance.activate();
   runApp(const ClassMateApp());
 }
 
-class ClassMateApp extends StatelessWidget {
+class ClassMateApp extends StatefulWidget {
   const ClassMateApp({super.key});
 
+  State<ClassMateApp> createState() => _ClassmateAppState();
+}
+
+class _ClassmateAppState extends State<ClassMateApp> {
   Future<void> init() async {
     String token = await FirebaseAppCheck.instance.getToken() ?? "";
     print("Token : $token");
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    init();
   }
 
   @override
