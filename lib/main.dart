@@ -1,8 +1,6 @@
 import 'package:classmate/login.dart';
 import 'package:firebase_app_check/firebase_app_check.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:classmate/home.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
@@ -11,7 +9,6 @@ void main() async {
   Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
   FirebaseAppCheck.instance.activate();
   runApp(const ClassMateApp());
 }
@@ -38,7 +35,6 @@ class _ClassmateAppState extends State<ClassMateApp> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'ClassMate',
-      // theme: ThemeData().copyWith(),
       home: Login(),
     );
   }

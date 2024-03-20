@@ -139,7 +139,7 @@ class _UserProfileState extends State<UserProfile> {
 
     FirebaseStorage storage = FirebaseStorage.instance;
 
-    Future<Uri> uploadPic() async {
+    Future<String> uploadPic() async {
       var location;
       Reference reference =
           storage.ref().child("classmates/" + DateTime.now().toString());
@@ -152,10 +152,10 @@ class _UserProfileState extends State<UserProfile> {
       return location;
     }
 
-    Future<void> updateClassMate() {
+    Future<void> updateClassMate() async {
       final img_url = uploadPic();
       print(img_url);
-      return users.add({
+      /*return users.add({
         'name': _nameController.text,
         'rollNo': _rollNoController.text,
         'course': _selectedCourse!.name.toString(),
@@ -171,7 +171,7 @@ class _UserProfileState extends State<UserProfile> {
           ),
         );
         Navigator.of(context).pop();
-      }).catchError((error) => print("Failed to add user: $error"));
+      }).catchError((error) => print("Failed to add user: $error"));*/
     }
 
     return Scaffold(
